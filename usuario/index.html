@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario de Contacto</title>
+
+	<link rel="stylesheet" href="styles/style.css">
+
+	<script type="text/javascript" src="validar.js"></script>
+	
+</head>
+<body>
+
+	<form action="" class="center" method="POST" onsubmit="return validarCamposObligatorios()">
+			
+		<label for="cedula">Cedula</label>
+		<input type="text" id="cedula" placeholder="INGRESE SU CÉDULA" maxlength="10" onkeypress="return soloNumeros(event)" onKeyUp="cedulaEC('cedula');">
+		<br>
+
+		<label for="names">Nombres *</label>
+		<input type="text" id="nombre" onKeyUp="dosPalabrasN('nombre');" placeholder="Ingrese sus nombres.." onkeypress="return sololetras(event)">
+		<br>
+
+		<label for="apellidos">Apellidos *</label>
+		<input type="text" id="apellido" placeholder="Ingrese sus apellidos.." onkeypress="return sololetras(event)">
+		<br>
+
+		<label for="direccion">Direccion </label>
+		<input type="text" id="direccion" placeholder="Ingrese su direccion..">
+		<br>
+
+		<label for="phone">Telefono / Celular</label >
+		<input type="text" id="phone" placeholder="Ingrese su telefono.." maxlength="10" onkeypress="return soloNumeros(event)"> 
+		<br>
+
+		<label for="fechaNac">Fecha Nacimiento</label>
+		<input type="text" id="fechaNac" placeholder="DDMMYYYY" maxlength="8" onkeypress="return soloNumeros(event)" onKeyUp="ValidarFecha('fechaNac');">
+		<br>
+
+		<div id="Mensaje"></div>
+
+		<label for="email">Correo electronico </label>
+		<input type="text" id="email" placeholder="CORREO ELECTRONICO UPS" onKeyUp="ValidarMail('email')" >
+		<br>
+
+		<h2 id='result'></h2>
+
+		<input type="submit" value="Registrarse" id="submit">
+
+	</form>
+
+</body>
+</html>
